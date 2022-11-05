@@ -1,0 +1,36 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+    margin: 0;
+    height: 100%;
+  }
+  body {
+    color: white;
+    background-image: linear-gradient(to bottom right, #264653, #2a9d8f);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+.MuiContainer-root {
+  width: 100vw;
+  padding-left: 0;
+  padding-right: 0;
+}

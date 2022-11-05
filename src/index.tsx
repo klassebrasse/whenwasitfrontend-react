@@ -3,13 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {SocketProvider} from "./contexts/socketContext";
+import './styles/globals.css'
+import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
+import GamePage from "./pages/GamePage";
+import LobbyPage from "./pages/LobbyPage";
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+      <SocketProvider>
+          <BrowserRouter>
+              <Routes>
+                  {/*Loader parameter in Route??? useful?*/}
+                  <Route path="/" element={<App/>}/>
+                  <Route path="/game/:lobbyIdParam" element={<GamePage/>}/>
+                  <Route path="/lobby/:lobbyIdParam" element={<LobbyPage/>}/>
+
+              </Routes>
+          </BrowserRouter>
+      </SocketProvider>
   </React.StrictMode>
 );
 
