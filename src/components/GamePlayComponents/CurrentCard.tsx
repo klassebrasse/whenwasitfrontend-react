@@ -8,7 +8,6 @@ function CurrentCard({card}: {card: ICard}) {
                 <CardContent>
                     <Typography sx={{ fontSize: 16, fontWeight: 'bold' }}>
                         {card.event}
-                        {card.year}
                     </Typography>
                 </CardContent>
             )}
