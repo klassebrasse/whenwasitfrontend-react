@@ -4,7 +4,7 @@ import {ISocket} from "../types/ISocket";
 import {createContext, useContext, useEffect, useState} from "react";
 
 
-const socket = io("http://192.168.1.107:8001", { transports : ['websocket'], upgrade: false });
+const socket = io();
 const SocketContext = createContext(socket);
 
 export function useSocket() {
@@ -15,7 +15,7 @@ export function SocketProvider({ children }: any) {
     //Add ISocket, store user data
     const [currentSocket, setCurrentSocket] = useState<ISocket>(null);
     useEffect(() => {
-        setCurrentSocket(io("http://192.168.1.107:8001", { transports : ['websocket'], upgrade: false, forceNew: false}))
+
 
         return () => setCurrentSocket(null)
     }, [])
